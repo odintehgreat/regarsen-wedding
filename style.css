@@ -53,7 +53,9 @@ h2 {
 .site-nav .nav-list {
   display: flex;
   list-style: none;
-  gap: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-list a {
@@ -123,15 +125,25 @@ section {
 }
 
 .welcome h2,
+.info-section h2,
 .rsvp h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
   margin-bottom: 0.9rem;
 }
 
-.welcome p {
+.welcome p,
+.info-section p {
   max-width: 60ch;
   color: var(--slate);
   font-size: 1.05rem;
+}
+
+.info-section {
+  background-color: var(--ivory);
+}
+
+.info-section-alt {
+  background-color: var(--off-white);
 }
 
 .rsvp {
