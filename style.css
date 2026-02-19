@@ -1,0 +1,203 @@
+:root {
+  --ivory: #f8f5ef;
+  --off-white: #f2eee8;
+  --soft-cream: #e9e2d6;
+  --charcoal: #2f2f2f;
+  --slate: #4a4a4a;
+  --line: #d9d2c6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.site-header {
+  background: rgba(248, 245, 239, 0.95);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header h1 {
+  font-size: clamp(1.6rem, 2.7vw, 2.2rem);
+  color: var(--charcoal);
+}
+
+.site-nav .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--slate);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--charcoal);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  width: 2rem;
+  height: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--charcoal);
+}
+
+.hero {
+  min-height: 68vh;
+  width: 100%;
+  background-image:
+    linear-gradient(rgba(47, 47, 47, 0.28), rgba(47, 47, 47, 0.28)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+}
+
+.hero-overlay {
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+}
+
+.hero h2 {
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  font-weight: 600;
+}
+
+section {
+  padding: 4rem 1.25rem;
+}
+
+.content-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.welcome {
+  background-color: var(--off-white);
+}
+
+.welcome h2,
+.rsvp h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.9rem;
+}
+
+.welcome p {
+  max-width: 60ch;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+
+.rsvp {
+  background-color: var(--ivory);
+}
+
+.rsvp-form {
+  margin-top: 1rem;
+  max-width: 500px;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.rsvp-form label {
+  font-weight: 600;
+  color: var(--slate);
+}
+
+.rsvp-form input {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background-color: #fff;
+  color: var(--charcoal);
+  font: inherit;
+}
+
+.rsvp-form button {
+  margin-top: 0.6rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--charcoal);
+  border-radius: 0.4rem;
+  background-color: var(--charcoal);
+  color: var(--off-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rsvp-form button:hover,
+.rsvp-form button:focus-visible {
+  background-color: #232323;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--ivory);
+    border-bottom: 1px solid var(--line);
+    display: none;
+    padding: 0.8rem 1.25rem 1rem;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav .nav-list {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+}
