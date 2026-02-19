@@ -91,10 +91,10 @@ h2 {
 .hero {
   min-height: 68vh;
   width: 100%;
-  background-image:
-    linear-gradient(rgba(47, 47, 47, 0.28), rgba(47, 47, 47, 0.28)),
-    url('images/IMG_3317.JPG');
-  background-size: cover;
+  background-color: var(--soft-cream);
+  background-image: url('images/IMG_3317.JPG');
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   display: grid;
   place-items: center;
