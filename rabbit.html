@@ -18,26 +18,202 @@
       font-family: "GFS Didot", "Didot", serif;
       text-align: center;
       padding: 1.5rem;
+      transition: background-color 0.45s ease, color 0.45s ease;
+    }
+
+    body.blackout {
+      background: #000000;
+      color: #000000;
+      animation: strobe-flash 110ms steps(1, end) infinite;
     }
 
     h1 {
       margin: 0;
       font-size: clamp(2rem, 7vw, 3.5rem);
+      font-family: "GFS Didot", "Didot", serif;
       font-weight: 400;
+      color: #d92525;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      transition: opacity 0.3s ease;
     }
 
-    p {
-      margin-top: 0.75rem;
-      font-family: "Manrope", "Segoe UI", sans-serif;
+    body.blackout h1 {
+      opacity: 0;
     }
+
+    .disco-final {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: min(70vw, 560px);
+      transform: translate(-50%, -50%) scale(0.85);
+      opacity: 0;
+      pointer-events: none;
+      display: block;
+      z-index: 10;
+    }
+
+    body.blackout .disco-final {
+      opacity: 1;
+      animation: disco-pop 220ms ease-out forwards, disco-flash 120ms steps(1, end) infinite;
+    }
+
+    .dancer-rabbit {
+      position: fixed;
+      top: 50%;
+      width: min(20vw, 170px);
+      transform: translateY(-50%);
+      opacity: 0;
+      pointer-events: none;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
+      z-index: 20;
+    }
+
+    .dancer-rabbit-left {
+      left: calc(50% - min(32vw, 250px));
+    }
+
+    .dancer-rabbit-right {
+      right: calc(50% - min(32vw, 250px));
+    }
+
+    body.show-rabbits .dancer-rabbit {
+      opacity: 1;
+      animation: dancer-dance 700ms ease-in-out infinite;
+    }
+
+    body.show-rabbits .dancer-rabbit-right {
+      animation-delay: 140ms;
+    }
+
+    .rabbit-word {
+      display: inline-block;
+      animation: rabbit-disintegrate 2.6s ease-in forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes rabbit-disintegrate {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        letter-spacing: 0.02em;
+        text-shadow: none;
+      }
+
+      35% {
+        opacity: 0.85;
+        transform: translateY(-1px) scale(1.01);
+        filter: blur(0.5px);
+        text-shadow: -2px 0 0 rgba(47, 47, 47, 0.22), 2px 0 0 rgba(47, 47, 47, 0.18);
+      }
+
+      70% {
+        opacity: 0.35;
+        transform: translateY(4px) scale(0.98);
+        filter: blur(1.6px);
+        letter-spacing: 0.16em;
+        text-shadow: -6px 2px 0 rgba(47, 47, 47, 0.18), 6px -1px 0 rgba(47, 47, 47, 0.14);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(3px);
+        letter-spacing: 0.24em;
+        text-shadow: -10px 3px 0 rgba(47, 47, 47, 0), 10px -3px 0 rgba(47, 47, 47, 0);
+      }
+    }
+
+    @keyframes strobe-flash {
+      0% {
+        background: #000000;
+      }
+
+      50% {
+        background: #bfc3c9;
+      }
+
+      100% {
+        background: #000000;
+      }
+    }
+
+    @keyframes disco-pop {
+      0% {
+        transform: translate(-50%, -50%) scale(0.85);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes disco-flash {
+      0% {
+        filter: brightness(0.55) contrast(1.1);
+      }
+
+      50% {
+        filter: brightness(1.45) contrast(1.25);
+      }
+
+      100% {
+        filter: brightness(0.55) contrast(1.1);
+      }
+    }
+
+    @keyframes dancer-dance {
+      0% {
+        transform: translateY(-50%) translateY(10px) scaleX(1);
+      }
+
+      35% {
+        transform: translateY(-50%) translateY(-18px) scaleX(1);
+      }
+
+      50% {
+        transform: translateY(-50%) translateY(-6px) scaleX(-1);
+      }
+
+      85% {
+        transform: translateY(-50%) translateY(-18px) scaleX(-1);
+      }
+
+      100% {
+        transform: translateY(-50%) translateY(10px) scaleX(1);
+      }
+    }
+
   </style>
 </head>
 <body>
+  <audio id="disco-audio" preload="auto" loop>
+    <source src="audio/kiss-prince.mp3" type="audio/mpeg" />
+  </audio>
+  <img class="dancer-rabbit dancer-rabbit-left" src="images/IMG_dancerabbit.jpg" alt="" aria-hidden="true" />
+  <img class="dancer-rabbit dancer-rabbit-right" src="images/IMG_dancerabbit.jpg" alt="" aria-hidden="true" />
+  <img class="disco-final" src="images/IMG_discofinal.png" alt="" aria-hidden="true" />
   <main>
-    <h1>You Followed The Rabbit</h1>
-    <p>More details coming soon.</p>
+    <h1>You Followed The <span class="rabbit-word">Rabbit</span></h1>
   </main>
+  <script>
+    const discoAudio = document.querySelector("#disco-audio");
+
+    window.setTimeout(() => {
+      document.body.classList.add("blackout");
+
+      if (discoAudio) {
+        discoAudio.currentTime = 0;
+        discoAudio.play().catch(() => {});
+      }
+
+      window.setTimeout(() => {
+        document.body.classList.add("show-rabbits");
+      }, 2000);
+    }, 4600);
+  </script>
 </body>
 </html>

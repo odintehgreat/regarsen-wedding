@@ -333,6 +333,12 @@ body.site-entered .corner-rabbit {
   display: block;
 }
 
+.orbit-item.i1 img {
+  width: 92%;
+  height: 92%;
+  margin: 4%;
+}
+
 .i1 { transform: translate(-50%, -50%) rotate(0deg) translate(0, -240px) rotate(0deg); }
 .i2 { transform: translate(-50%, -50%) rotate(51.42deg) translate(0, -240px) rotate(-51.42deg); }
 .i3 { transform: translate(-50%, -50%) rotate(102.84deg) translate(0, -240px) rotate(-102.84deg); }
