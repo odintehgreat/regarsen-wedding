@@ -176,6 +176,113 @@ body.site-entered .site-shell {
   padding: 0 1.25rem 4rem;
 }
 
+.corner-rabbit {
+  position: fixed;
+  z-index: 40;
+  width: clamp(64px, 8.5vw, 100px);
+  aspect-ratio: 1 / 1;
+  display: block;
+  --hop-from-x: 0px;
+  --hop-from-y: 0px;
+  --hop-overshoot-x: 0px;
+  --hop-overshoot-y: 0px;
+  will-change: transform, opacity;
+}
+
+.corner-rabbit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.corner-rabbit.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.corner-rabbit.is-entering {
+  animation: rabbit-corner-hop-in 450ms ease-out both;
+}
+
+.corner-rabbit.is-exiting {
+  animation: rabbit-corner-hop-out 450ms ease-in both;
+  pointer-events: none;
+}
+
+body.has-gate .corner-rabbit {
+  display: none;
+}
+
+body.site-entered .corner-rabbit {
+  display: block;
+}
+
+.corner-top-left {
+  top: 1rem;
+  left: 1rem;
+  --hop-from-x: -70px;
+  --hop-from-y: -70px;
+  --hop-overshoot-x: 10px;
+  --hop-overshoot-y: 10px;
+}
+
+.corner-top-right {
+  top: 1rem;
+  right: 1rem;
+  --hop-from-x: 70px;
+  --hop-from-y: -70px;
+  --hop-overshoot-x: -10px;
+  --hop-overshoot-y: 10px;
+}
+
+.corner-bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+  --hop-from-x: -70px;
+  --hop-from-y: 70px;
+  --hop-overshoot-x: 10px;
+  --hop-overshoot-y: -10px;
+}
+
+.corner-bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+  --hop-from-x: 70px;
+  --hop-from-y: 70px;
+  --hop-overshoot-x: -10px;
+  --hop-overshoot-y: -10px;
+}
+
+@keyframes rabbit-corner-hop-in {
+  0% {
+    opacity: 0;
+    transform: translate(var(--hop-from-x), var(--hop-from-y)) scale(0.82);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate(var(--hop-overshoot-x), var(--hop-overshoot-y)) scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes rabbit-corner-hop-out {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--hop-from-x), var(--hop-from-y)) scale(0.82);
+  }
+}
+
 .orbit-intro {
   min-height: 100vh;
   display: flex;
@@ -299,6 +406,10 @@ body.site-entered .site-shell {
     width: min(360px, 92vw);
   }
 
+  .corner-rabbit {
+    width: clamp(54px, 16vw, 78px);
+  }
+
   .orbit-nav {
     width: min(96vw, 420px);
   }
@@ -330,3 +441,4 @@ body.site-entered .site-shell {
   .i7:hover,
   .i7:focus-visible { transform: translate(-50%, -50%) rotate(308.52deg) translate(0, -155px) rotate(-308.52deg) scale(1.06); }
 }
+
