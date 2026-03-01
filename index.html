@@ -6,111 +6,91 @@
   <title>Nicole & Jordan | Wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=GFS+Didot&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Nicole & Jordan's Wedding" />
   <meta property="og:description" content="Join us in celebrating our wedding!" />
   <meta property="og:image" content="https://odintehgreat.github.io/regarsen-wedding/images/IMG_3317.JPG" />
   <meta property="og:url" content="https://odintehgreat.github.io/regarsen-wedding/" />
   <meta property="og:type" content="website" />
-
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <h1>Nicole &amp; Jordan</h1>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+  <div class="landing-screen" id="landing-screen" aria-hidden="false">
+    <div class="landing-content">
+      <p class="landing-kicker">NICOLE + JORDAN ONLINE</p>
+      <h2 class="landing-title">CLICK THE RABBIT TO ENTER</h2>
+      <button class="rabbit-button" id="enter-site" type="button" aria-label="Enter wedding website">
+        <img class="rabbit" src="images/IMG_3.png" alt="Rabbit" />
       </button>
-      <nav class="site-nav" aria-label="Primary">
-        <ul id="primary-nav" class="nav-list">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#our-story">Our Story</a></li>
-          <li><a href="#hotel">Hotel</a></li>
-          <li><a href="#location">Location</a></li>
-          <li><a href="#registry">Registry</a></li>
-          <li><a href="#rsvp">RSVP</a></li>
-        </ul>
-      </nav>
+      <p class="landing-hint">best viewed with lots of love and mild chaos</p>
+      <p class="landing-scroll"><span class="landing-scroll-track"><span class="landing-scroll-text">WEDDING WEBSITE UNDER CONSTRUCTION ~ FRIENDS AND FAMILY LOADING ~ BIG PARTY COMING UP ~ SAVE THE DATE~ INVITE ONLY ~ <a class="landing-scroll-link" href="rabbit.html" target="_blank" rel="noopener noreferrer">FOLLOW THE RABBIT</a> ~ </span><span class="landing-scroll-text">WEDDING WEBSITE UNDER CONSTRUCTION ~ FRIENDS AND FAMILY LOADING ~ BIG PARTY COMING UP ~ SAVE THE DATE~ INVITE ONLY ~ <a class="landing-scroll-link" href="rabbit.html" target="_blank" rel="noopener noreferrer">FOLLOW THE RABBIT</a> ~ </span></span></p>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero" aria-label="Hero banner">
-      <div class="hero-overlay">
-        <h2>Our Wedding</h2>
-      </div>
-    </section>
+  <div class="site-shell" id="site-shell">
+    <main>
+      <section class="orbit-intro" id="top" aria-label="Circular section navigation">
+        <div class="orbit-nav" aria-label="Circular section navigation">
+          <a class="orbit-item i1" href="#welcome" aria-label="Go to Welcome">
+            <img src="images/IMG_1.png" alt="Welcome" />
+          </a>
+          <a class="orbit-item i2" href="#story" aria-label="Go to Our Story">
+            <img src="images/IMG_4.png" alt="Our story" />
+          </a>
+          <a class="orbit-item i3" href="#party" aria-label="Go to Wedding Party">
+            <img src="images/IMG_3.png" alt="Wedding party" />
+          </a>
+          <a class="orbit-item i4" href="#details" aria-label="Go to Details">
+            <img src="images/IMG_8.png" alt="Details" />
+          </a>
+          <a class="orbit-item i5" href="#travel" aria-label="Go to Travel">
+            <img src="images/IMG_7.png" alt="Travel" />
+          </a>
+          <a class="orbit-item i6" href="#registry" aria-label="Go to Registry">
+            <img src="images/IMG_6.png" alt="Registry" />
+          </a>
+          <a class="orbit-item i7" href="#rsvp" aria-label="Go to RSVP">
+            <img src="images/IMG_9.png" alt="RSVP" />
+          </a>
+        </div>
+      </section>
 
-    <section id="welcome" class="welcome" aria-labelledby="welcome-title">
-      <div class="content-wrap">
+      <section id="welcome" class="site-section" aria-labelledby="welcome-title">
         <h2 id="welcome-title">Welcome</h2>
-        <p>
-          We are so happy to celebrate this chapter with the people we love most.
-          Thank you for being part of our story.
-        </p>
-      </div>
-    </section>
+        <p>Welcome details go here.</p>
+      </section>
 
-    <section id="our-story" class="info-section" aria-labelledby="our-story-title">
-      <div class="content-wrap">
-        <h2 id="our-story-title">Our Story</h2>
-        <p>
-          From our first date to this next chapter, every moment has led us here.
-          We are grateful to share this day with you.
-        </p>
-      </div>
-    </section>
+      <section id="story" class="site-section" aria-labelledby="story-title">
+        <h2 id="story-title">Our Story</h2>
+        <p>Story details go here.</p>
+      </section>
 
-    <section id="hotel" class="info-section info-section-alt" aria-labelledby="hotel-title">
-      <div class="content-wrap">
-        <h2 id="hotel-title">Hotel</h2>
-        <p>
-          A room block will be available for guests. Hotel details, booking link,
-          and reservation deadlines will be shared here soon.
-        </p>
-      </div>
-    </section>
+      <section id="party" class="site-section" aria-labelledby="party-title">
+        <h2 id="party-title">Wedding Party</h2>
+        <p>Wedding party details go here.</p>
+      </section>
 
-    <section id="location" class="info-section" aria-labelledby="location-title">
-      <div class="content-wrap">
-        <h2 id="location-title">Location</h2>
-        <p>
-          Ceremony and reception location details, parking information, and nearby
-          recommendations will be posted here.
-        </p>
-      </div>
-    </section>
+      <section id="details" class="site-section" aria-labelledby="details-title">
+        <h2 id="details-title">Event Details</h2>
+        <p>Ceremony and reception details go here.</p>
+      </section>
 
-    <section id="registry" class="info-section info-section-alt" aria-labelledby="registry-title">
-      <div class="content-wrap">
+      <section id="travel" class="site-section" aria-labelledby="travel-title">
+        <h2 id="travel-title">Travel + Hotel</h2>
+        <p>Travel and room block details go here.</p>
+      </section>
+
+      <section id="registry" class="site-section" aria-labelledby="registry-title">
         <h2 id="registry-title">Registry</h2>
-        <p>
-          Your presence is the best gift. For friends and family who have asked,
-          registry links will be listed in this section.
-        </p>
-      </div>
-    </section>
+        <p>Registry details go here.</p>
+      </section>
 
-    <section id="rsvp" class="rsvp" aria-labelledby="rsvp-title">
-      <div class="content-wrap">
+      <section id="rsvp" class="site-section" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">RSVP</h2>
-        <form class="rsvp-form" action="#" method="post">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required />
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-
-          <button type="submit">Send RSVP</button>
-        </form>
-      </div>
-    </section>
-  </main>
+        <p>RSVP details go here.</p>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

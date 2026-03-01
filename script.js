@@ -1,10 +1,12 @@
-const navToggle = document.querySelector('.nav-toggle');
-const siteNav = document.querySelector('.site-nav');
+const landingScreen = document.querySelector('#landing-screen');
+const enterSiteButton = document.querySelector('#enter-site');
 
-if (navToggle && siteNav) {
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    siteNav.classList.toggle('is-open');
+if (landingScreen && enterSiteButton) {
+  document.body.classList.add('has-gate');
+
+  enterSiteButton.addEventListener('click', () => {
+    document.body.classList.remove('has-gate');
+    document.body.classList.add('site-entered');
+    landingScreen.setAttribute('aria-hidden', 'true');
   });
 }
