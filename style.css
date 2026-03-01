@@ -339,6 +339,20 @@ body.site-entered .corner-rabbit {
   margin: 4%;
 }
 
+.orbit-label {
+  position: absolute;
+  top: calc(100% + 0.28rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "GFS Didot", "Didot", serif;
+  font-size: clamp(0.5rem, 1.05vw, 0.72rem);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rabbit-red);
+  white-space: nowrap;
+}
+
 .i1 { transform: translate(-50%, -50%) rotate(0deg) translate(0, -240px) rotate(0deg); }
 .i2 { transform: translate(-50%, -50%) rotate(51.42deg) translate(0, -240px) rotate(-51.42deg); }
 .i3 { transform: translate(-50%, -50%) rotate(102.84deg) translate(0, -240px) rotate(-102.84deg); }
